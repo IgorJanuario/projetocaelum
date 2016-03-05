@@ -11,8 +11,9 @@
 </head>
 <body>
 	<core:import url="cabecalho.jsp"></core:import>
-	<form action="mvc?logica=AlterarContatoLogic">
+	<form action="mvc?logica=AlterarContatoLogic" method="POST">
 	<core:forEach var="contato" items="${contatos}">
+		<input type="hidden" value="${contato.id}" name="id" />
 		Nome: <input type="text" value="${contato.nome }" name="nome" /> <br/>
 		E-mail: <input type="text" value="${contato.email}" name="email" />  <br/>
 		EndereÃ§o: <input type="text" value="${contato.endereco}" name="endereco" />  <br/>
