@@ -7,6 +7,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -23,12 +24,15 @@ public class AdicionaContatosServlet extends HttpServlet{
 	{
 		PrintWriter out = resp.getWriter();
 		
+		RequestDispatcher rd = req.getRequestDispatcher("/sucesso.jsp");
+		
 		String nome = req.getParameter("nome");
 		String endereco = req.getParameter("endereco");
 		String email = req.getParameter("email");
-		String dataEmTexto = req.getParameter("data");
+		String dataEmTexto = req.getParameter("dataNascimento");
 		Calendar dataNascimento = null;
 		
+		System.out.println(dataEmTexto);
 		try
 		{
 			Date date = new SimpleDateFormat("dd/MM/yyyy").parse(dataEmTexto);
@@ -49,11 +53,14 @@ public class AdicionaContatosServlet extends HttpServlet{
 		ContatoDao dao = new ContatoDao();
 		dao.adiciona(contato);
 		
-		out.println("<html>");
-		out.println("<body>");
-		out.println("Contato " + contato.getNome() + " adicionado com sucesso !");
-		out.println("</body>");
-		out.println("</html>");
+		rd.forward(req, resp);
+		/*
+			out.println("<html>");
+			out.println("<body>");
+			out.println("Contato " + contato.getNome() + " adicionado com sucesso !");
+			out.println("</body>");
+			out.println("</html>");
+		*/
 	}
 
 }

@@ -1,1 +1,2 @@
-Copyright 2010 - Todos os direitos reservados.
+<hr />
+Copyright 2016 - Todos os direitos reservados.
