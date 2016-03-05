@@ -4,9 +4,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Contato adicionado</title>
+<title>Insert title here</title>
 </head>
 <body>
-	O contato ${param.nome} foi adicionado com sucesso.
+	<h1> Página da nossa primeira lógica</h1>
 </body>
 </html>
