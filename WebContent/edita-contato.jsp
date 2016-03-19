@@ -17,7 +17,7 @@
 		Nome: <input type="text" value="${contato.nome }" name="nome" /> <br/>
 		E-mail: <input type="text" value="${contato.email}" name="email" />  <br/>
 		EndereÃ§o: <input type="text" value="${contato.endereco}" name="endereco" />  <br/>
-		Data de Nascimento: <caelum:campoData value="${contato.dataNascimento.time}" id="dataNascimento"/>  <br/>
+		Data de Nascimento: <caelum:campoData value="<fmt:formatDate value="${contato.dataNascimento.time}" pattern="dd/MM/yyyy"/>" id="dataNascimento"/>  <br/>
 		<input type="submit" value="Gravar"/>
 	</core:forEach>
 	</form>
